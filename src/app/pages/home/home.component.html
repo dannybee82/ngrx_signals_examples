@@ -1,0 +1,79 @@
+<div class="column w-50 p-1">
+    <h3>Home - Overview states</h3>
+    <div class="row border-dark p-1">
+        <div class="col me-1">
+            <strong>Counter:</strong>
+        </div>
+        <div class="col">{{ this.counterStore.count() }}</div>
+    </div>
+    <div class="row flex-space-around border-dark mt-1 p-1">
+        @if(this.booksStore.isLoading()) {
+            No Books loaded.
+        } @else {
+            <div class="col">
+                <strong>Available Books: {{ this.booksStore.books().length }}</strong>
+            </div>
+            <div class="col">
+                <strong>In Collection: {{ this.booksStore.collection().length }}</strong>
+            </div>
+        }
+    </div>
+    <div class="row mt-1 flex-space-around border-dark p-1">
+        @if(this.evenOrOddStore.numbers().length > 0) {
+            <div class="col">
+                <strong>{{ this.evenOrOddStore.isEven() ? 'Even Numbers' : 'Odd Numbers' }}</strong>                
+            </div>
+            <div class="col">
+                <strong>Minimum: </strong> {{ this.evenOrOddStore.minimum() }}
+                <strong>Maximum: </strong> {{ this.evenOrOddStore.maximum() }}
+            </div>
+            <div class="col">
+                @for(number of  this.evenOrOddStore.numbers(); track $index; let last = $last) {
+                    {{ number }}
+                    @if(!last) {
+                        ,
+                    }
+                }
+            </div>
+        } @else {
+            No Numbers set.
+        }
+    </div>
+    <div class="row mt-1 flex-space-around border-dark p-1">
+        @if(this.personStore.persons().length > 0) {
+            <div class="col">
+                <strong>Persons: </strong> {{ this.personStore.persons().length }}
+            </div>
+            <div class="col">
+                <strong>Current Page: </strong> {{ this.personStore.pageIndex() + 1 }}
+            </div>
+            <div class="col">
+                <strong>Page Size: </strong> {{ this.personStore.pagerSize() }}
+            </div>
+        } @else {
+            No Persons loaded.
+        }
+    </div>
+    <div class="row mt-1 flex-space-around border-dark p-1">
+        @if(this.animalStore.allAnimals().length > 0) {
+            <div class="col">
+                <strong>Amount of Animals: </strong> {{ this.animalStore.allAnimals().length }}
+            </div>
+            <div class="col">
+                <strong>Last search: </strong> {{ this.animalStore.search() }}
+            </div>
+            <div class="col">
+                <strong>Found Animals:</strong>
+                @if(this.animalStore.foundAnimals().length > 0) {
+                    @for(animal of this.animalStore.foundAnimals(); track $index; let last = $last) {
+                        {{ animal }}{{ !last ? ',' : '' }}
+                    }
+                } @else {
+                    No Animals found.
+                }
+            </div>
+        } @else {
+            No Animals loaded.
+        }
+    </div>
+</div>

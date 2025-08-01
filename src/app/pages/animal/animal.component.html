@@ -1,0 +1,20 @@
+<div class="col">
+    <form [formGroup]="this.animalForm">
+        <div class="row mb-1 ps-1">
+            <div class="col">
+                <mat-form-field>
+                    <input type="text" matInput formControlName="animalName" placeholder="Animal name">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+    <div class="col ps-1">
+         @if(this.animalStore.foundAnimals().length > 0) {
+            @for(animal of this.animalStore.foundAnimals(); track $index) {
+                <p>{{ animal }}</p>
+            }
+        } @else {
+            <p>No matching animals found.</p>
+        }
+    </div>
+</div>

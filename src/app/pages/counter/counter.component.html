@@ -1,0 +1,25 @@
+<div class="col">
+    <div class="row p-1">
+        <strong>Current counter: {{ this.counterStore.count() }}</strong>
+    </div>
+    <div class="row flex-space-around w-50">
+        <div class="col">
+            <button type="button" mat-raised-button color="accent" (click)="this.counterStore.increment()">
+                <mat-icon>add</mat-icon>
+                <span>Increment Counter</span>
+            </button>
+        </div>
+                <div class="col">
+            <button type="button" mat-raised-button color="accent" (click)="this.counterStore.decrement()">
+                <mat-icon>remove</mat-icon>
+                <span>Decrement Counter</span>
+            </button>
+        </div>
+        <div class="col">
+            <button type="button" mat-raised-button color="warn" (click)="this.counterStore.reset()">
+                <mat-icon>autorenew</mat-icon>
+                <span>Reset Counter</span>
+            </button>
+        </div>
+    </div>
+</div>

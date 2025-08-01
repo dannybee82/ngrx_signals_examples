@@ -1,0 +1,17 @@
+<div class="col w-50 p-1">
+    @if(this.bookStore.isLoading()) {
+        <p>Loading...</p>
+    } @else {
+        <h2>Books</h2>
+        <app-book-list 
+            [books]="this.bookStore.books()" 
+            (add)="this.bookStore.addBook($event)">
+        </app-book-list>
+
+        <h2>My Collection</h2>
+        <app-book-collection 
+            [books]="this.bookStore.collection()" 
+            (remove)="this.bookStore.removeBook($event)"
+        ></app-book-collection>
+    }
+</div>

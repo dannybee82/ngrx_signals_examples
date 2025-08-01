@@ -1,0 +1,10 @@
+@for(book of this.books(); track $index) {
+    <div class="column mb-half border-dark p-half">
+        <p>{{book.volumeInfo.title}}</p>
+        <p> by {{book.volumeInfo.authors}}</p>
+        <button (click)="add.emit(book.id)" data-test="add-button" mat-raised-button color="primary" class="ms-2">
+            <mat-icon>add</mat-icon>
+            <span>Add to Collection</span>            
+        </button>
+  </div>
+}
