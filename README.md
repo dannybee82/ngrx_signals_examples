@@ -1,10 +1,10 @@
 # NgrxSignalsExamples
 
-Angular 20 [Angular CLI](https://github.com/angular/angular-cli) application with Angular Material and the packages @ngrx/store  + @ngrx/signals.
+Angular 20 [Angular CLI](https://github.com/angular/angular-cli) application with Angular Material and the packages: _@ngrx/store_ + _@ngrx/signals_.
 
-This application uses the **SignalStore** - NgRx = Angular Redux. 
+This application uses the **SignalStore** - _NgRx_ \= Angular Redux. 
 
-Advantage of the _SignalStore:_ all functionality in a single file (no separate _actions, reducers, selectors_ of _effects_).
+Advantage of the _SignalStore_: all functionality in a single file (no separate _actions, reducers, selectors_ or _effects_).
 
 Showcase of NgRX examples - when returning back to a page it keeps it's state.
 
@@ -22,7 +22,7 @@ See the images in the root of this project for examples.
 
 ## Installation + run app
 
-Angular 20 needs a **Node.js** version of at least _20.19.0_
+**Angular 20** needs a **Node.js** version of at least _20.19.0_
 
 **Command to install**
 
