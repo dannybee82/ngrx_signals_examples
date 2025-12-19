@@ -1,6 +1,6 @@
 # NgrxSignalsExamples
 
-Angular 20 [Angular CLI](https://github.com/angular/angular-cli) application with Angular Material and the packages: _@ngrx/store_ + _@ngrx/signals_.
+Angular 21 [Angular CLI](https://github.com/angular/angular-cli) application with Angular Material and the packages: _@ngrx/store_ + _@ngrx/signals_.
 
 This application uses the **SignalStore** - _NgRx_ \= Angular Redux. 
 
@@ -22,7 +22,7 @@ See the images in the root of this project for examples.
 
 ## Installation + run app
 
-**Angular 20** needs a **Node.js** version of at least _20.19.0_
+**Angular 21** needs a **Node.js** version of at least _20.19.0_
 
 **Command to install**
 
@@ -39,3 +39,9 @@ _ng serve --open_
 or shorter:
 
 _ng s --o_
+
+### **Changelog:**
+
+_December 2025_
+
+\- Upgrade to _Angular 21_ and upgraded other packages.
