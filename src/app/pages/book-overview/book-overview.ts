@@ -1,16 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { BookStore } from '../../stores/books.store';
 import { AllMaterialsModule } from '../../all-materials.module';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookCollectionComponent } from './book-collection/book-collection.component';
+import { BookList } from './book-list/book-list';
+import { BookCollection } from './book-collection/book-collection';
 
 @Component({
   selector: 'app-book-overview',
-  imports: [AllMaterialsModule, BookListComponent, BookCollectionComponent],
-  templateUrl: './book-overview.component.html',
-  styleUrl: './book-overview.component.scss'
+  imports: [AllMaterialsModule, BookList, BookCollection],
+  templateUrl: './book-overview.html',
+  styleUrl: './book-overview.scss'
 })
-export class BookOverviewComponent implements OnInit {
+export class BookOverview implements OnInit {
 
   readonly bookStore = inject(BookStore);
 

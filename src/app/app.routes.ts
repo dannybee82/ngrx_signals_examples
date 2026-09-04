@@ -1,40 +1,40 @@
 import { Routes } from '@angular/router';
-import { MenuComponent } from './components/menu/menu.component';
-import { HomeComponent } from './pages/home/home.component';
-import { CounterComponent } from './pages/counter/counter.component';
-import { BookOverviewComponent } from './pages/book-overview/book-overview.component';
-import { EvenOrOddComponent } from './pages/even-or-odd/even-or-odd.component';
-import { PersonComponent } from './pages/person/person.component';
-import { AnimalComponent } from './pages/animal/animal.component';
+import { Menu } from './components/menu/menu';
+import { Home } from './pages/home/home';
+import { Counter } from './pages/counter/counter';
+import { BookOverview } from './pages/book-overview/book-overview';
+import { EvenOrOdd } from './pages/even-or-odd/even-or-odd';
+import { Person } from './pages/person/person';
+import { Animal } from './pages/animal/animal';
 
 export const routes: Routes = [
     {
         path: '',
-        component: MenuComponent,
+        component: Menu,
         children: [
             {
                 path: '',
-                component: HomeComponent
+                component: Home
             },
             {
                 path: 'counter',
-                component: CounterComponent
+                component: Counter
             },
             {
                 path: 'books',
-                component: BookOverviewComponent
+                component: BookOverview
             },
             {
                 path: 'even-or-odd',
-                component: EvenOrOddComponent
+                component: EvenOrOdd
             },
             {
                 path: 'persons',
-                component: PersonComponent
+                component: Person
             },
             {
                 path: 'animals',
-                component: AnimalComponent
+                component: Animal
             }
         ]
     }

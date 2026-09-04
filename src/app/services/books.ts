@@ -1,13 +1,11 @@
-import { Injectable, inject } from '@angular/core';
+import { Service, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Book } from '../models/book.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class BooksService {
+@Service()
+export class Books {
 
   private http = inject(HttpClient);
 

@@ -1,5 +1,5 @@
 <div class="col p-1 w-50">
-    <form [formGroup]="this.evenOrOddForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="evenOrOddForm" (ngSubmit)="submitForm()">
         <h3>Even and Odd Numbers Example</h3>
         <div class="row">
             <div class="col">
@@ -32,9 +32,9 @@
 
     <div class="row mt-1">
         <div class="ps-2">
-            @if(this.evenOrOddStore.numbers().length > 0) {
-                {{ this.evenOrOddStore.isEven() ? 'Even Numbers' : 'Odd Numbers' }}<br/>
-                @for(number of  this.evenOrOddStore.numbers(); track $index) {
+            @if(evenOrOddStore.numbers().length > 0) {
+                {{ evenOrOddStore.isEven() ? 'Even Numbers' : 'Odd Numbers' }}<br/>
+                @for(number of  evenOrOddStore.numbers(); track $index) {
                     {{ number }}<br/>
                 }
             } @else {
@@ -42,10 +42,10 @@
             }
         </div>
     </div>
-    @if(this.showErrors().length > 0) {
+    @if(showErrors().length > 0) {
         <div class="row">
             <div class="errors">
-                @for(error of this.showErrors(); track error) {
+                @for(error of showErrors(); track error) {
                     {{ error }}<br/>
                 }
             </div>

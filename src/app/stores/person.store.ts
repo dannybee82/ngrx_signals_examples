@@ -1,11 +1,11 @@
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
-import { PersonState } from '../models/person-state.interfate';
+import { PersonState } from '../models/person-state.interface';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, switchMap } from 'rxjs';
 import { inject } from '@angular/core';
-import { PersonsService } from '../services/persons.service';
+import { Persons } from '../services/persons';
 import { tapResponse } from '@ngrx/operators';
-import { Person } from '../models/person.interface';
+import { PersonInterface } from '../models/person.interface';
 
 export const initialState: PersonState = {
     isLoading: true,
@@ -17,12 +17,12 @@ export const initialState: PersonState = {
 export const PersonStore = signalStore(
     { providedIn: 'root' },
     withState(initialState),
-    withMethods((store, personsService = inject(PersonsService)) => ({
+    withMethods((store, personsService = inject(Persons)) => ({
         getAllPersons: rxMethod<void>(pipe(
             switchMap(() => {
                 return personsService.getAllPersons().pipe(
                     tapResponse({
-                        next: (data: Person[]) => {
+                        next: (data: PersonInterface[]) => {
                             patchState(store, { isLoading: false, persons: data });
                         },
                         error: () => {

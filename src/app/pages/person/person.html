@@ -1,9 +1,9 @@
 <div class="col p-1">
-    @if(this.personStore.isLoading()) {
+    @if(personStore.isLoading()) {
         <strong>Loading... Please wait 3 seconds...</strong>
     } @else {
-        @if(this.personStore.persons().length > 0) {
-            <table mat-table [dataSource]="dataSource" [style.display]="this.showTable() ? 'block' : 'none'">
+        @if(personStore.persons().length > 0) {
+            <table mat-table [dataSource]="dataSource" [style.display]="showTable() ? 'block' : 'none'">
                 <ng-container matColumnDef="id">
                     <th mat-header-cell *matHeaderCellDef> #id </th>
                     <td mat-cell *matCellDef="let person"> {{  person.id }} </td>

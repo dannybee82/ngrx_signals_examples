@@ -3,7 +3,7 @@ import { AnimalData } from '../models/animal-data.interface';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, switchMap } from 'rxjs';
 import { inject } from '@angular/core';
-import { AnimalService } from '../services/animal.service';
+import { Animal } from '../services/animal';
 import { tapResponse } from '@ngrx/operators';
 
 const initialState: AnimalData = {
@@ -15,7 +15,7 @@ const initialState: AnimalData = {
 export const AnimalStore = signalStore(
     { providedIn: 'root' },
     withState(initialState),
-    withMethods((store, animalService = inject(AnimalService)) => ({
+    withMethods((store, animalService = inject(Animal)) => ({
         getAllAnimals: rxMethod<void>(
             pipe(
                 switchMap(() => {

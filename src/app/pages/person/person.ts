@@ -2,19 +2,19 @@ import { Component, inject, OnInit, viewChild, Signal, WritableSignal, signal, c
 import { PersonStore } from '../../stores/person.store';
 import { AllMaterialsModule } from '../../all-materials.module';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { Person } from '../../models/person.interface';
+import { PersonInterface } from '../../models/person.interface';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-person',
   imports: [AllMaterialsModule, MatTableModule],
-  templateUrl: './person.component.html',
-  styleUrl: './person.component.scss'
+  templateUrl: './person.html',
+  styleUrl: './person.scss'
 })
-export class PersonComponent implements OnInit {
+export class Person implements OnInit {
 
   displayedColumns: string[] = ['id', 'firstname', 'lastname', 'age'];
-  dataSource = new MatTableDataSource<Person>([]);
+  dataSource = new MatTableDataSource<PersonInterface>([]);
   showTable: WritableSignal<boolean> = signal(false);
 
   isDataLoaded: Signal<boolean> = computed(() => {
@@ -27,7 +27,7 @@ export class PersonComponent implements OnInit {
 
   prepareData: EffectRef = effect(() => {
     if(this.isDataLoaded()) {
-      this.dataSource = new MatTableDataSource<Person>(this.personStore.persons());
+      this.dataSource = new MatTableDataSource<PersonInterface>(this.personStore.persons());
       this.showTable.set(true);
 
       if(this.paginator()) {
@@ -50,8 +50,6 @@ export class PersonComponent implements OnInit {
   }
   
   updateChanges($event: PageEvent): void {
-    console.log($event);
-
     this.personStore.updatePageIndex($event.pageIndex);
     this.personStore.updatePageSize($event.pageSize);
   }

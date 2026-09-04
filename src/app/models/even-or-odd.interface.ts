@@ -1,4 +1,4 @@
-export interface EvenOrOdd {
+export interface EvenOrOddInterface {
     minimum: number,
     maximum: number,
     numbers: number[],

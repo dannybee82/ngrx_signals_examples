@@ -8,10 +8,10 @@ import { AnimalStore } from '../../stores/animal.store';
 @Component({
   selector: 'app-home',
   imports: [],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  templateUrl: './home.html',
+  styleUrl: './home.scss'
 })
-export class HomeComponent implements OnInit {
+export class Home implements OnInit {
 
   readonly counterStore = inject(CounterStore);
   readonly booksStore = inject(BookStore);

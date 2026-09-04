@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AnimalService {
+@Service()
+export class Animal {
   
 private _animals: string[] = [
     'Bearded Dragon',

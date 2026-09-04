@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
     AllMaterialsModule,
     RouterModule
   ],
-  templateUrl: './menu.component.html',
-  styleUrl: './menu.component.scss'
+  templateUrl: './menu.html',
+  styleUrl: './menu.scss'
 })
-export class MenuComponent {
+export class Menu {
 }

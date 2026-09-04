@@ -1,8 +1,8 @@
-import { Person } from "./person.interface";
+import { PersonInterface } from "./person.interface";
 
 export interface PersonState {
     isLoading: boolean,
-    persons: Person[],
+    persons: PersonInterface[],
     pageIndex: number,
     pagerSize: number
 }

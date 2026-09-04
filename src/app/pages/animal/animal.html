@@ -1,5 +1,5 @@
 <div class="col">
-    <form [formGroup]="this.animalForm">
+    <form [formGroup]="animalForm">
         <div class="row mb-1 ps-1">
             <div class="col">
                 <mat-form-field>
@@ -9,8 +9,8 @@
         </div>
     </form>
     <div class="col ps-1">
-         @if(this.animalStore.foundAnimals().length > 0) {
-            @for(animal of this.animalStore.foundAnimals(); track $index) {
+         @if(animalStore.foundAnimals().length > 0) {
+            @for(animal of animalStore.foundAnimals(); track $index) {
                 <p>{{ animal }}</p>
             }
         } @else {

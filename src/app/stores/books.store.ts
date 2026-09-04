@@ -1,6 +1,6 @@
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 import { BookState } from '../models/book-state.interface';
-import { BooksService } from '../services/books.service';
+import { Books } from '../services/books';
 import { inject } from '@angular/core';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Book } from '../models/book.interface';
@@ -16,7 +16,7 @@ export const initialState: BookState = {
 export const BookStore = signalStore(
     { providedIn: 'root' },
     withState(initialState),
-    withMethods((store, booksService = inject(BooksService)) => ({
+    withMethods((store, booksService = inject(Books)) => ({
         getAllBooks: rxMethod<void>(
             pipe(
                 switchMap(() => {

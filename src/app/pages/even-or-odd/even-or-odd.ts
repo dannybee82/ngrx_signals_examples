@@ -2,15 +2,15 @@ import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core
 import { EvenOrOddStore } from '../../stores/even-or-odd.store';
 import { FormBuilder, FormGroup, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AllMaterialsModule } from '../../all-materials.module';
-import { EvenOrOdd } from '../../models/even-or-odd.interface';
+import { EvenOrOddInterface } from '../../models/even-or-odd.interface';
 
 @Component({
   selector: 'app-even-or-odd',
   imports: [AllMaterialsModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './even-or-odd.component.html',
-  styleUrl: './even-or-odd.component.scss'
+  templateUrl: './even-or-odd.html',
+  styleUrl: './even-or-odd.scss'
 })
-export class EvenOrOddComponent implements OnInit {
+export class EvenOrOdd implements OnInit {
 
   evenOrOddForm: UntypedFormGroup = new FormGroup({});
 
@@ -36,7 +36,7 @@ export class EvenOrOddComponent implements OnInit {
     if(this.evenOrOddForm.valid && min < max && min > -1 && max > -1) {
       this.showErrors.set([]);
 
-      const data: Partial<EvenOrOdd> = {
+      const data: Partial<EvenOrOddInterface> = {
         minimum: min,
         maximum: max,
         isEven: this.evenOrOddForm.get('isEven')?.value

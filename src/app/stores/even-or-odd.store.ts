@@ -1,7 +1,7 @@
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
-import { EvenOrOdd } from '../models/even-or-odd.interface';
+import { EvenOrOddInterface } from '../models/even-or-odd.interface';
 
-const initialState: EvenOrOdd = {
+const initialState: EvenOrOddInterface = {
     minimum: 0,
     maximum: 25,
     numbers: [],
@@ -25,7 +25,7 @@ export const EvenOrOddStore = signalStore(
                     arr.filter(item => item % 2 === 1)
             });
         },
-        setData: (data: Partial<EvenOrOdd>) => {
+        setData: (data: Partial<EvenOrOddInterface>) => {
             patchState(store, {
                 minimum: data.minimum,
                 maximum: data.maximum,

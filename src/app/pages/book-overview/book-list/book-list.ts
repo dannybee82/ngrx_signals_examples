@@ -5,10 +5,10 @@ import { Book } from '../../../models/book.interface';
 @Component({
   selector: 'app-book-list',
   imports: [AllMaterialsModule],
-  templateUrl: './book-list.component.html',
-  styleUrl: './book-list.component.scss'
+  templateUrl: './book-list.html',
+  styleUrl: './book-list.scss'
 })
-export class BookListComponent {
+export class BookList {
 
   readonly books: InputSignal<Book[]> = input.required<Book[]>();
   readonly add: OutputEmitterRef<string> = output<string>();

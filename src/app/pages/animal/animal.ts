@@ -7,10 +7,10 @@ import { debounceTime, of, switchMap } from 'rxjs';
 @Component({
   selector: 'app-animal',
   imports: [AllMaterialsModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './animal.component.html',
-  styleUrl: './animal.component.scss'
+  templateUrl: './animal.html',
+  styleUrl: './animal.scss'
 })
-export class AnimalComponent implements OnInit {
+export class Animal implements OnInit {
 
   animalForm: UntypedFormGroup = new FormGroup({});
 

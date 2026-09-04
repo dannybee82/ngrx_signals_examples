@@ -5,10 +5,10 @@ import { CounterStore } from '../../stores/counter.store';
 @Component({
   selector: 'app-counter',
   imports: [AllMaterialsModule],
-  templateUrl: './counter.component.html',
-  styleUrl: './counter.component.scss'
+  templateUrl: './counter.html',
+  styleUrl: './counter.scss'
 })
-export class CounterComponent implements OnInit {
+export class Counter implements OnInit {
 
   readonly counterStore = inject(CounterStore);
 

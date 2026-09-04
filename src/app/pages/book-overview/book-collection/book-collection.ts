@@ -5,10 +5,10 @@ import { Book } from '../../../models/book.interface';
 @Component({
   selector: 'app-book-collection',
   imports: [AllMaterialsModule],
-  templateUrl: './book-collection.component.html',
-  styleUrl: './book-collection.component.scss'
+  templateUrl: './book-collection.html',
+  styleUrl: './book-collection.scss'
 })
-export class BookCollectionComponent {
+export class BookCollection {
 
     books: InputSignal<Book[]> = input.required<Book[]>();
     remove: OutputEmitterRef<string> = output<string>();
